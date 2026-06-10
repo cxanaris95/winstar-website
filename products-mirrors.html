@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winstar Glass &amp; Hardware – Mirror Products</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); }
+    .back-link::before { content: '←'; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="index.html"><img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo"></a>
+      </div>
+    </div>
+    <nav class="global-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="page-banner">
+      <div class="page-banner-bg" style="background-image: url('mirror.jpg');"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <h1>Mirrors</h1>
+        <p>Types of mirrors we manufacture and supply</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <a href="products.html" class="back-link">Back to Products</a>
+
+        <div class="catalog-layout">
+          <aside class="catalog-sidebar">
+            <div class="catalog-sidebar-title">Types of Mirrors</div>
+            <nav class="catalog-nav">
+              <button data-target="regular">Regular</button>
+              <button data-target="beveled">Beveled</button>
+              <button data-target="antique">Antique</button>
+            </nav>
+          </aside>
+
+          <div class="catalog-content">
+            <article class="catalog-panel" id="regular">
+              <h2>Regular</h2>
+              <div class="divider"></div>
+              <p>Regular mirrors feature a smooth, flat reflective surface with clean, straight-cut edges. Available in a wide range of sizes and custom dimensions, they are the most versatile mirror option and can be used in virtually any setting — from bathrooms, bedrooms, and hallways to retail environments and commercial spaces. Regular mirrors provide clear, true-color reflection and can be frameless or paired with a frame of your choice.</p>
+            </article>
+
+            <article class="catalog-panel" id="beveled">
+              <h2>Beveled</h2>
+              <div class="divider"></div>
+              <p>Beveled mirrors are distinguished by their angled, polished edges, which create a decorative border around the perimeter of the mirror. The bevel refracts light and adds a prismatic, elegant effect that enhances the appearance of any room. Available in a range of bevel widths, beveled mirrors are a popular choice for bathrooms, dressing rooms, entryways, and decorative wall installations where a refined, finished look is desired.</p>
+            </article>
+
+            <article class="catalog-panel" id="antique">
+              <h2>Antique</h2>
+              <div class="divider"></div>
+              <p>Antique mirrors feature a deliberately aged or distressed reflective surface that gives the glass a warm, vintage character. The subtle imperfections and tonal variation in the reflective coating evoke a sense of history and craftsmanship, making antique mirrors a striking decorative element in both classic and contemporary interiors. They are widely used as accent pieces, feature walls, cabinet inserts, and in high-end residential and hospitality design.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const buttons = [...document.querySelectorAll('.catalog-nav button')];
+    const panels  = [...document.querySelectorAll('.catalog-panel')];
+
+    function activate(id) {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+    }
+    function fromHash() {
+      const id = location.hash.slice(1);
+      activate(panels.some(p => p.id === id) ? id : buttons[0].dataset.target);
+    }
+    buttons.forEach(b => b.addEventListener('click', () => {
+      history.replaceState(null, '', '#' + b.dataset.target);
+      activate(b.dataset.target);
+    }));
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  </script>
+</body>
+</html>

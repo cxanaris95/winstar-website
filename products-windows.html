@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winstar Glass &amp; Hardware – Window Products</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); }
+    .back-link::before { content: '←'; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="index.html"><img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo"></a>
+      </div>
+    </div>
+    <nav class="global-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="page-banner">
+      <div class="page-banner-bg" style="background-image: url('homebackground.jpg');"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <h1>Windows</h1>
+        <p>Window styles we manufacture and supply</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <a href="products.html" class="back-link">Back to Products</a>
+
+        <div class="catalog-layout">
+          <aside class="catalog-sidebar">
+            <div class="catalog-sidebar-title">Types of Windows</div>
+            <nav class="catalog-nav">
+              <button data-target="double-hung">Double Hung</button>
+              <button data-target="slider">Slider</button>
+              <button data-target="picture">Picture</button>
+              <button data-target="casement">Casement</button>
+              <button data-target="bay-bow">Bay / Bow</button>
+              <button data-target="hopper">Hopper</button>
+              <button data-target="awning">Awning</button>
+            </nav>
+          </aside>
+
+          <div class="catalog-content">
+            <article class="catalog-panel" id="double-hung">
+              <h2>Double Hung</h2>
+              <div class="divider"></div>
+              <p>Double hung windows are one of the most popular and versatile window styles available. They feature two sashes that slide vertically within the frame, allowing either the top, the bottom, or both sashes to be opened at the same time for flexible ventilation. Many modern double hung windows offer tilt-in sashes, making them easy to clean from inside the home. With a classic profile, strong thermal performance, and compatibility with a wide range of architectural styles, double hung windows are an excellent choice for both residential and light commercial applications.</p>
+            </article>
+
+            <article class="catalog-panel" id="slider">
+              <h2>Slider</h2>
+              <div class="divider"></div>
+              <p>Slider windows operate by gliding horizontally along a track, offering smooth, effortless operation and wide, unobstructed views. Available in two-panel and three-panel configurations, sliders are ideal for spaces where a window that swings outward is not practical — such as above counters, walkways, or patios. Their low-profile design, easy operation, and minimal maintenance make them a practical and attractive option for bedrooms, living areas, and commercial spaces alike.</p>
+            </article>
+
+            <article class="catalog-panel" id="picture">
+              <h2>Picture</h2>
+              <div class="divider"></div>
+              <p>Picture windows are fixed, non-operable windows designed to frame views, maximize natural light, and create a dramatic visual impact. Because they do not open, they form an airtight seal that delivers outstanding energy efficiency. Picture windows can be custom-sized and shaped to complement any architectural style, and they are frequently combined with operable windows on either side to balance light, views, and ventilation. They are commonly used in living rooms, great rooms, and commercial facades.</p>
+            </article>
+
+            <article class="catalog-panel" id="casement">
+              <h2>Casement</h2>
+              <div class="divider"></div>
+              <p>Casement windows are hinged on one side and swing open outward with a crank mechanism, allowing the full window opening to be used for ventilation. When closed, the sash presses tightly against the frame to create one of the most energy-efficient seals available in any window style. Casement windows are well-suited for locations that are hard to reach — such as over a kitchen sink or countertop — and their clean-lined look works with both modern and traditional architecture.</p>
+            </article>
+
+            <article class="catalog-panel" id="bay-bow">
+              <h2>Bay / Bow</h2>
+              <div class="divider"></div>
+              <p>Bay and bow windows project outward from the exterior wall to create a sense of expanded interior space and bring in light from multiple angles. A bay window typically consists of three panels — a large center picture window flanked by two angled side windows — and adds strong architectural character to a façade. A bow window uses four or more panels arranged in a gentle curve for a softer, more sweeping look. Both styles are ideal for living rooms, dining rooms, and bedrooms where added space, light, and visual interest are desired.</p>
+            </article>
+
+            <article class="catalog-panel" id="hopper">
+              <h2>Hopper</h2>
+              <div class="divider"></div>
+              <p>Hopper windows are hinged at the bottom and tilt inward from the top to allow ventilation. Their compact, space-saving design makes them especially well-suited for basements, bathrooms, utility rooms, and other areas where wall space is limited. When closed, hopper windows form a tight seal for good energy efficiency and weather resistance. They are often paired with larger fixed or operable windows to provide ventilation in otherwise difficult-to-access spaces.</p>
+            </article>
+
+            <article class="catalog-panel" id="awning">
+              <h2>Awning</h2>
+              <div class="divider"></div>
+              <p>Awning windows are hinged at the top and swing outward from the bottom, creating an "awning" effect that directs rainwater away from the opening. This design allows awning windows to remain open during light rain, providing continuous fresh air without letting moisture in. They are commonly installed above other windows, in bathrooms, kitchens, and high on walls where both ventilation and privacy are important. Their outward-opening design also creates a tight seal when closed, contributing to strong energy performance.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const buttons = [...document.querySelectorAll('.catalog-nav button')];
+    const panels  = [...document.querySelectorAll('.catalog-panel')];
+
+    function activate(id) {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+    }
+    function fromHash() {
+      const id = location.hash.slice(1);
+      activate(panels.some(p => p.id === id) ? id : buttons[0].dataset.target);
+    }
+    buttons.forEach(b => b.addEventListener('click', () => {
+      history.replaceState(null, '', '#' + b.dataset.target);
+      activate(b.dataset.target);
+    }));
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  </script>
+</body>
+</html>

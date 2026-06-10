@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winstar Glass &amp; Hardware – Request a Free Quote</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <style>
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="index.html">
+          <img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo">
+        </a>
+      </div>
+    </div>
+    <nav class="global-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+
+    <!-- ===== PAGE BANNER ===== -->
+    <div class="page-banner">
+      <div class="page-banner-bg" style="background-image: url('homebackground.jpg');"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <h1>Request a Free Quote</h1>
+        <p>Tell us about your project — we'll get right back to you</p>
+      </div>
+    </div>
+
+    <!-- ===== QUOTE FORM ===== -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="quote-layout">
+
+          <!-- Left: intro / steps -->
+          <aside class="quote-aside reveal">
+            <h2>Get a free, no-obligation quote</h2>
+            <p>Share a few details about what you need — and attach photos if you have them. Photos help us give you a faster, more accurate estimate.</p>
+
+            <ul class="quote-steps">
+              <li>
+                <span class="step-num">1</span>
+                <span class="step-text"><strong>Describe your project</strong><span>Type of product, sizes, and any details.</span></span>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <span class="step-text"><strong>Add photos (optional)</strong><span>Snap a picture of the space, broken glass, or a sketch.</span></span>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <span class="step-text"><strong>We'll reply with a quote</strong><span>Most requests answered within 1 business day.</span></span>
+              </li>
+            </ul>
+
+            <div class="quote-contact-note">
+              Prefer to talk? Call us at <a href="tel:+17185392308">(718) 539-2308</a> or
+              <a href="contact.html">visit our Flushing showroom</a>.
+            </div>
+          </aside>
+
+          <!-- Right: form -->
+          <div class="quote-form reveal">
+            <form id="quoteForm" novalidate>
+              <!-- Web3Forms configuration -->
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <input type="hidden" name="subject" value="New Quote Request — Winstar Website">
+              <input type="hidden" name="from_name" value="Winstar Website">
+              <!-- Honeypot spam trap (leave empty) -->
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+              <div class="form-grid-2">
+                <div class="form-row">
+                  <label for="name">Name <span class="req">*</span></label>
+                  <input type="text" id="name" name="name" required autocomplete="name">
+                </div>
+                <div class="form-row">
+                  <label for="phone">Phone <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-row">
+                  <label for="product">Product / Service</label>
+                  <select id="product" name="product">
+                    <option>Glass</option>
+                    <option>Mirrors</option>
+                    <option>Windows</option>
+                    <option>Shower Doors</option>
+                    <option>Commercial Storefront / Aluminum Doors</option>
+                    <option>Repair / Replacement</option>
+                    <option>Other / Not sure</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="dimensions">Approx. Dimensions (optional)</label>
+                  <input type="text" id="dimensions" name="dimensions" placeholder="e.g. 36&quot; x 48&quot;">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Project Details <span class="req">*</span></label>
+                <textarea id="message" name="message" required placeholder="Tell us what you're looking for, the location/room, timeline, etc."></textarea>
+              </div>
+
+              <div class="form-row">
+                <label>Photos (optional — up to 5)</label>
+                <div class="dropzone" id="dropzone">
+                  <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                  </svg>
+                  <p>Drag &amp; drop photos here</p>
+                  <span>or click to browse — JPG or PNG, up to 5 images</span>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" multiple style="display:none">
+                <div class="preview-grid" id="previewGrid"></div>
+              </div>
+
+              <button type="submit" class="btn-submit" id="submitBtn">Request My Free Quote</button>
+              <div class="form-status" id="formStatus"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>&copy; 2025 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // ===== Photo upload handling =====
+    const dropzone    = document.getElementById('dropzone');
+    const fileInput   = document.getElementById('fileInput');
+    const previewGrid = document.getElementById('previewGrid');
+    const MAX_FILES   = 5;
+    let selectedFiles = [];
+
+    function addFiles(fileList) {
+      for (const f of fileList) {
+        if (!f.type.startsWith('image/')) continue;
+        if (selectedFiles.length >= MAX_FILES) break;
+        if (selectedFiles.some(x => x.name === f.name && x.size === f.size)) continue;
+        selectedFiles.push(f);
+      }
+      renderPreviews();
+    }
+
+    function renderPreviews() {
+      previewGrid.innerHTML = '';
+      selectedFiles.forEach((f, i) => {
+        const url = URL.createObjectURL(f);
+        const div = document.createElement('div');
+        div.className = 'preview-thumb';
+        div.innerHTML =
+          '<img src="' + url + '" alt="preview">' +
+          '<button type="button" class="preview-remove" data-i="' + i + '" aria-label="Remove">&times;</button>';
+        previewGrid.appendChild(div);
+      });
+    }
+
+    previewGrid.addEventListener('click', e => {
+      const btn = e.target.closest('.preview-remove');
+      if (btn) { selectedFiles.splice(+btn.dataset.i, 1); renderPreviews(); }
+    });
+
+    dropzone.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', () => { addFiles(fileInput.files); fileInput.value = ''; });
+
+    ['dragenter', 'dragover'].forEach(ev =>
+      dropzone.addEventListener(ev, e => { e.preventDefault(); dropzone.classList.add('dragover'); }));
+    ['dragleave', 'drop'].forEach(ev =>
+      dropzone.addEventListener(ev, e => { e.preventDefault(); dropzone.classList.remove('dragover'); }));
+    dropzone.addEventListener('drop', e => addFiles(e.dataTransfer.files));
+
+    // Resize/compress images client-side so attachments stay small enough to email
+    function resizeImage(file) {
+      return new Promise(resolve => {
+        if (!file.type.startsWith('image/')) return resolve(file);
+        const img = new Image();
+        const url = URL.createObjectURL(file);
+        img.onload = () => {
+          URL.revokeObjectURL(url);
+          const MAX = 1600;
+          let { width, height } = img;
+          if (width > MAX || height > MAX) {
+            const scale = Math.min(MAX / width, MAX / height);
+            width = Math.round(width * scale);
+            height = Math.round(height * scale);
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+          canvas.toBlob(blob => {
+            if (!blob) return resolve(file);
+            const name = file.name.replace(/\.(heic|heif|png|webp|bmp|tiff?)$/i, '.jpg');
+            resolve(new File([blob], name, { type: 'image/jpeg' }));
+          }, 'image/jpeg', 0.82);
+        };
+        img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+        img.src = url;
+      });
+    }
+
+    // ===== Form submission =====
+    const form      = document.getElementById('quoteForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const status    = document.getElementById('formStatus');
+
+    function showError(msg) {
+      status.className = 'form-status error show';
+      status.textContent = msg || 'Something went wrong. Please try again or call us at (718) 539-2308.';
+    }
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      status.className = 'form-status';
+
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const fd = new FormData(form);                 // text fields (file input has no name, so excluded)
+        const processed = await Promise.all(selectedFiles.map(resizeImage));
+        processed.forEach((file, i) => fd.append('photo_' + (i + 1), file, file.name));
+
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+        const data = await res.json();
+
+        if (data.success) {
+          form.innerHTML =
+            '<div class="form-success-panel">' +
+              '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+                '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>' +
+              '</svg>' +
+              '<h3>Thank you!</h3>' +
+              '<p>Your quote request has been sent. We\'ll get back to you shortly — usually within one business day.</p>' +
+            '</div>';
+        } else {
+          showError(data.message);
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Request My Free Quote';
+        }
+      } catch (err) {
+        showError();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Request My Free Quote';
+      }
+    });
+  </script>
+</body>
+</html>

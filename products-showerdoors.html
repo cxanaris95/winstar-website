@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winstar Glass &amp; Hardware – Shower Door Products</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); }
+    .back-link::before { content: '←'; font-size: 18px; }
+
+    /* Product image gallery */
+    .product-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .product-gallery img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product-gallery img:hover { transform: scale(1.03); box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
+
+    /* Spec lists (sizes / finishes) */
+    .spec-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 24px;
+      max-width: 760px;
+    }
+    .spec-block h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .spec-block ul { list-style: none; margin: 0; padding: 0; }
+    .spec-block li {
+      padding: 7px 0 7px 22px;
+      position: relative;
+      color: var(--text);
+      font-size: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    .spec-block li:last-child { border-bottom: none; }
+    .spec-block li small { color: var(--muted); }
+    .spec-block li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 15px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    @media (max-width: 540px) { .spec-row { grid-template-columns: 1fr; gap: 20px; } }
+
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.88); align-items:center; justify-content:center; }
+    .lightbox.open { display:flex; }
+    #lb-img { max-width:88vw; max-height:84vh; border-radius:6px; box-shadow:0 16px 60px rgba(0,0,0,0.6); display:block; }
+    .lb-close { position:fixed; top:20px; right:28px; background:none; border:none; color:#fff; font-size:42px; line-height:1; cursor:pointer; opacity:0.8; transition:opacity 0.2s; z-index:10000; }
+    .lb-close:hover { opacity:1; }
+    .lb-arrow { position:fixed; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.12); border:none; color:#fff; font-size:32px; padding:14px 18px; cursor:pointer; border-radius:6px; transition:background 0.2s; z-index:10000; }
+    .lb-arrow:hover { background:rgba(255,255,255,0.25); }
+    .lb-prev { left:16px; }
+    .lb-next { right:16px; }
+    .lb-counter { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.6); font-size:13px; letter-spacing:0.08em; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="index.html"><img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo"></a>
+      </div>
+    </div>
+    <nav class="global-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="page-banner">
+      <div class="page-banner-bg" style="background-image: url('showerdoor.jpg');"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <h1>Shower Doors</h1>
+        <p>Types of shower doors we manufacture and supply</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <a href="products.html" class="back-link">Back to Products</a>
+
+        <div class="catalog-layout">
+          <aside class="catalog-sidebar">
+            <div class="catalog-sidebar-title">Types of Shower Doors</div>
+            <nav class="catalog-nav">
+              <button data-target="ds21-series">DS21 Series</button>
+              <button data-target="wfs-series">WFS Series</button>
+              <button data-target="ws10-series">WS10 Series</button>
+              <button data-target="custom-shower-doors">Custom Shower Doors</button>
+            </nav>
+          </aside>
+
+          <div class="catalog-content">
+
+            <!-- DS21 Series -->
+            <article class="catalog-panel" id="ds21-series">
+              <h2>DS21 Series</h2>
+              <div class="divider"></div>
+
+              <div class="product-gallery">
+                <img src="Pictures/Types of Shower Door/DS21/G21N11Pic.jpg" class="gallery-thumb" alt="DS21 Series frameless sliding shower door" data-src="Pictures/Types of Shower Door/DS21/G21N11Pic.jpg">
+                <img src="Pictures/Types of Shower Door/DS21/G21N11 001.jpg" class="gallery-thumb" alt="DS21 Series shower door" data-src="Pictures/Types of Shower Door/DS21/G21N11 001.jpg">
+                <img src="Pictures/Types of Shower Door/DS21/mmexport1495022911794.jpg" class="gallery-thumb" alt="DS21 Series shower door" data-src="Pictures/Types of Shower Door/DS21/mmexport1495022911794.jpg">
+                <img src="Pictures/Types of Shower Door/DS21/mmexport1495022931218.jpg" class="gallery-thumb" alt="DS21 Series shower door" data-src="Pictures/Types of Shower Door/DS21/mmexport1495022931218.jpg">
+                <img src="Pictures/Types of Shower Door/DS21/G21N11rollers.jpg" class="gallery-thumb" alt="DS21 Series roller hardware" data-src="Pictures/Types of Shower Door/DS21/G21N11rollers.jpg">
+                <img src="Pictures/Types of Shower Door/DS21/G21N11rollers2.jpg" class="gallery-thumb" alt="DS21 Series roller hardware" data-src="Pictures/Types of Shower Door/DS21/G21N11rollers2.jpg">
+              </div>
+
+              <p>The DS21 Series frameless sliding shower door combines a clean, modern aesthetic with lasting durability. Crafted from 3/8" clear tempered glass and fitted with high-quality hardware, this two-piece system pairs a fixed panel with a sliding door for a sleek, minimalist look.</p>
+
+              <div class="spec-row">
+                <div class="spec-block">
+                  <h3>Available Sizes</h3>
+                  <ul>
+                    <li>50" x 78"</li>
+                    <li>56" x 78"</li>
+                    <li>60" x 78"</li>
+                    <li>66" x 78"</li>
+                    <li>60" x 66" <small>— bathtub</small></li>
+                    <li>66" x 66" <small>— bathtub</small></li>
+                  </ul>
+                </div>
+                <div class="spec-block">
+                  <h3>Available Finishes</h3>
+                  <ul>
+                    <li>Chrome</li>
+                    <li>Brushed Nickel</li>
+                    <li>Brass</li>
+                    <li>Matte Black</li>
+                    <li>Oil Rubbed Bronze</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- WFS Series -->
+            <article class="catalog-panel" id="wfs-series">
+              <h2>WFS Series</h2>
+              <div class="divider"></div>
+
+              <p>Similar to the DS21 Series, the WFS Series frameless sliding shower door combines a clean, modern aesthetic with smaller hardware. Crafted from 3/8" clear tempered glass, this two-piece system pairs a fixed panel with a sliding door for a sleek, minimalist look.</p>
+
+              <div class="spec-row">
+                <div class="spec-block">
+                  <h3>Available Sizes</h3>
+                  <ul>
+                    <li>48" x 78"</li>
+                    <li>54" x 78"</li>
+                    <li>60" x 78" / 72"</li>
+                    <li>66" x 78"</li>
+                    <li>60" x 66" <small>— bathtub</small></li>
+                  </ul>
+                </div>
+                <div class="spec-block">
+                  <h3>Available Finishes</h3>
+                  <ul>
+                    <li>Chrome</li>
+                    <li>Brushed Nickel</li>
+                    <li>Brass</li>
+                    <li>Matte Black</li>
+                    <li>Oil Rubbed Bronze</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- WS10 Series -->
+            <article class="catalog-panel" id="ws10-series">
+              <h2>WS10 Series</h2>
+              <div class="divider"></div>
+
+              <div class="product-gallery">
+                <img src="Pictures/Types of Shower Door/WS10/D34N02 002.jpg" class="gallery-thumb" alt="WS10 Series sliding shower door" data-src="Pictures/Types of Shower Door/WS10/D34N02 002.jpg">
+                <img src="Pictures/Types of Shower Door/WS10/D34N02.jpg" class="gallery-thumb" alt="WS10 Series sliding shower door" data-src="Pictures/Types of Shower Door/WS10/D34N02.jpg">
+                <img src="Pictures/Types of Shower Door/WS10/Copy of mmexport1495546379331.jpg" class="gallery-thumb" alt="WS10 Series sliding shower door" data-src="Pictures/Types of Shower Door/WS10/Copy of mmexport1495546379331.jpg">
+                <img src="Pictures/Types of Shower Door/WS10/Copy of mmexport1495546381107.jpg" class="gallery-thumb" alt="WS10 Series sliding shower door" data-src="Pictures/Types of Shower Door/WS10/Copy of mmexport1495546381107.jpg">
+              </div>
+
+              <p>The WS10 Series is our value-friendly sliding shower door, designed to deliver a clean, polished look without breaking the budget. Both panels slide for easy access, and the door comes equipped with a framed top rail and a towel bar. Available in 1/4" clear tempered glass for bathtub enclosures or 3/8" clear tempered glass for standing showers, the WS10 Series is a practical and attractive solution for any bathroom.</p>
+
+              <div class="spec-row">
+                <div class="spec-block">
+                  <h3>Available Sizes</h3>
+                  <ul>
+                    <li>60" x 60" <small>— bathtub, 1/4" tempered</small></li>
+                    <li>66" x 60" <small>— bathtub, 1/4" tempered</small></li>
+                    <li>48" x 72" <small>— standing shower, 3/8" tempered</small></li>
+                    <li>56" x 72" <small>— standing shower, 3/8" tempered</small></li>
+                    <li>60" x 72" <small>— standing shower, 3/8" tempered</small></li>
+                    <li>66" x 72" <small>— standing shower, 3/8" tempered</small></li>
+                  </ul>
+                </div>
+                <div class="spec-block">
+                  <h3>Available Finishes</h3>
+                  <ul>
+                    <li>Chrome</li>
+                    <li>Brushed Nickel</li>
+                    <li>Oil Rubbed Bronze</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Custom Shower Doors -->
+            <article class="catalog-panel" id="custom-shower-doors">
+              <h2>Custom Shower Doors</h2>
+              <div class="divider"></div>
+              <p>Every bathroom is different, and sometimes a standard model just isn't the right fit. In addition to our in-stock sliding shower door models, we offer custom shower doors in a range of configurations — including swing-open styles — with your choice of hardware and finish. Contact us to discuss your options and find the right solution for your space.</p>
+              <p><a href="get-quote.html" style="color: var(--blue); font-weight: 600;">Request a free quote</a> or browse completed shower-door projects in our <a href="portfolio-showerdoors.html" style="color: var(--blue); font-weight: 600;">Portfolio</a>.</p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+
+  <div id="lightbox" class="lightbox">
+    <button class="lb-close" id="lb-close">&times;</button>
+    <button class="lb-arrow lb-prev" id="lb-prev">&#10094;</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-arrow lb-next" id="lb-next">&#10095;</button>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+
+  <script>
+    // ===== Sidebar / panel switching =====
+    const buttons = [...document.querySelectorAll('.catalog-nav button')];
+    const panels  = [...document.querySelectorAll('.catalog-panel')];
+
+    function activate(id) {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+    }
+    function fromHash() {
+      const id = location.hash.slice(1);
+      activate(panels.some(p => p.id === id) ? id : buttons[0].dataset.target);
+    }
+    buttons.forEach(b => b.addEventListener('click', () => {
+      history.replaceState(null, '', '#' + b.dataset.target);
+      activate(b.dataset.target);
+    }));
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+
+    // ===== Lightbox (scoped per gallery, so series don't mix) =====
+    const lightbox  = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lb-img');
+    const lbCounter = document.getElementById('lb-counter');
+    let group = [];
+    let cur = 0;
+
+    function show(i) {
+      cur = (i + group.length) % group.length;
+      lbImg.src = group[cur].dataset.src;
+      lbImg.alt = group[cur].alt;
+      lbCounter.textContent = (cur + 1) + ' / ' + group.length;
+    }
+    function openLb(thumbs, i) { group = thumbs; show(i); lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeLb() { lightbox.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+
+    document.querySelectorAll('.product-gallery').forEach(gallery => {
+      const groupThumbs = Array.from(gallery.querySelectorAll('.gallery-thumb'));
+      groupThumbs.forEach((img, i) => img.addEventListener('click', () => openLb(groupThumbs, i)));
+    });
+
+    document.getElementById('lb-close').addEventListener('click', closeLb);
+    document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); show(cur - 1); });
+    document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); show(cur + 1); });
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+  </script>
+</body>
+</html>

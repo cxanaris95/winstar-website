@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winstar Glass &amp; Hardware – Home</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <style>
+    /* Fade-in on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="index.html">
+          <img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo">
+        </a>
+      </div>
+    </div>
+    <nav class="global-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <div class="page-content">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <p class="hero-quote">
+          A cut above <em>the rest</em> —<br>
+          quality glass solutions for <em>over 3 decades</em>
+        </p>
+        <a href="#about" class="hero-cta">Discover Our Story</a>
+      </div>
+      <div class="hero-scroll">
+        <span>Scroll</span>
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section" id="about">
+      <!-- Background looping video. Drop your .mp4 in the project folder
+           and update the src below. aboutus.jpg shows during load + as fallback. -->
+      <video class="about-bg-video"
+             autoplay muted loop playsinline preload="auto"
+             poster="aboutus.jpg">
+        <source src="about-loop.mp4" type="video/mp4">
+      </video>
+      <div class="about-inner">
+        <div class="about-text reveal">
+          <h2 class="section-title">About Us</h2>
+          <div class="divider"></div>
+          <p class="about-body">
+            Founded in 1996, Winstar has spent over three decades serving the New York tristate area with expert glass solutions, ranging from windows to shower doors. As a family-owned business based in Flushing, NY, we specialize in manufacturing and producing a wide range of products — including windows, mirrors, shower doors, and metalwork — for both residential and commercial needs.
+          </p>
+          <p class="about-body">
+            Quality is at the heart of everything we do. From new window installations to custom shower doors, our team brings industry-level expertise to every project, working closely with you to bring your vision to life. Installation services are available as well.
+          </p>
+          <p class="about-body">
+            No job is too big or too small. We also carry an extensive stock of window, shower door, and aluminum door parts. Stop by our showroom or reach out today for a <strong>free consultation</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-item reveal">
+          <div class="stat-num">1996</div>
+          <div class="stat-label">Inception</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Generations</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-num">1,000+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-num">NY</div>
+          <div class="stat-label">Tristate Area</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HOME TEASERS ===== -->
+    <section class="home-teasers">
+      <div class="section-inner">
+        <h2 class="section-title reveal">What We Offer</h2>
+        <div class="divider reveal"></div>
+        <p class="section-sub reveal">From custom glass fabrication to window replacement, we handle it all.</p>
+        <div class="teaser-grid">
+          <a class="teaser-card reveal-left" href="products.html">
+            <img src="windowproduct.png" alt="Products">
+            <div class="teaser-card-overlay"></div>
+            <div class="teaser-card-body">
+              <h3>Our Products</h3>
+              <p>Glass, mirrors, windows, shower doors &amp; more.</p>
+              <span class="teaser-link">
+                Browse Products
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </span>
+            </div>
+          </a>
+          <a class="teaser-card reveal-right" href="services.html">
+            <img src="glasservices.jpg" alt="Services">
+            <div class="teaser-card-overlay"></div>
+            <div class="teaser-card-body">
+              <h3>Our Services</h3>
+              <p>Polishing, beveling, cutting, and glass replacement.</p>
+              <span class="teaser-link">
+                View Services
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>&copy; 2025 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winstar Glass &amp; Hardware – Glass Products</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <style>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); }
+    .back-link::before { content: '←'; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <a href="index.html"><img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo"></a>
+      </div>
+    </div>
+    <nav class="global-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-content">
+    <div class="page-banner">
+      <div class="page-banner-bg" style="background-image: url('glass.jpg');"></div>
+      <div class="page-banner-overlay"></div>
+      <div class="page-banner-content">
+        <h1>Glass</h1>
+        <p>Types of glass we manufacture and supply</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-inner">
+        <a href="products.html" class="back-link">Back to Products</a>
+
+        <div class="catalog-layout">
+          <aside class="catalog-sidebar">
+            <div class="catalog-sidebar-title">Types of Glass</div>
+            <nav class="catalog-nav">
+              <button data-target="regular-glass">Regular Glass</button>
+              <button data-target="tempered-glass">Tempered Glass</button>
+              <button data-target="laminated-glass">Laminated Glass</button>
+              <button data-target="insulated-glass">Insulated Glass</button>
+            </nav>
+          </aside>
+
+          <div class="catalog-content">
+            <article class="catalog-panel" id="regular-glass">
+              <h2>Regular Glass</h2>
+              <div class="divider"></div>
+              <p>Regular glass, also known as annealed or float glass, is the standard form of glass produced by floating molten glass over a bed of molten tin to create a flat, uniform surface. It offers excellent optical clarity and is available in a range of thicknesses to suit virtually any application. Regular glass is commonly used for interior windows, picture frames, tabletops, shelving, and general glazing projects where impact resistance is not a primary concern.</p>
+            </article>
+
+            <article class="catalog-panel" id="tempered-glass">
+              <h2>Tempered Glass</h2>
+              <div class="divider"></div>
+              <p>Tempered glass is a safety glass that has been processed through extreme heating and rapid cooling, making it four to five times stronger than standard glass. When it does break, it shatters into small, rounded fragments rather than sharp shards, greatly reducing the risk of injury. This makes tempered glass the preferred choice for shower enclosures, glass doors, storefronts, railings, and any application where safety and durability are essential. Tempered glass meets ANSI Z97.1 and CPSC 16 CFR 1201 safety glazing requirements.</p>
+            </article>
+
+            <article class="catalog-panel" id="laminated-glass">
+              <h2>Laminated Glass</h2>
+              <div class="divider"></div>
+              <p>Laminated glass is constructed from two or more layers of glass bonded together with an interlayer — typically polyvinyl butyral (PVB) or ethylene vinyl acetate (EVA). When broken, the interlayer holds the glass in place, preventing it from shattering into loose pieces. In addition to safety, laminated glass offers significant benefits for UV protection (blocking up to 99% of UV rays), sound reduction, and security. It is widely used in skylights, overhead glazing, hurricane-resistant windows, storefronts, and anywhere that a combination of safety, security, and sound control is desired.</p>
+            </article>
+
+            <article class="catalog-panel" id="insulated-glass">
+              <h2>Insulated Glass</h2>
+              <div class="divider"></div>
+              <p>Insulated glass, commonly referred to as double-pane or IG (insulating glass) units, consists of two or more glass panes sealed together with a spacer and a hermetically sealed air or inert gas (such as argon or krypton) fill between the panes. This construction significantly reduces heat transfer, improving a building's energy efficiency and lowering heating and cooling costs. Insulated glass also helps reduce condensation on interior surfaces and minimizes outside noise. It is the standard choice for residential and commercial windows and doors where thermal performance and energy savings are a priority.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+    </footer>
+  </div>
+
+  <script>
+    const buttons = [...document.querySelectorAll('.catalog-nav button')];
+    const panels  = [...document.querySelectorAll('.catalog-panel')];
+
+    function activate(id) {
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.target === id));
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+    }
+    function fromHash() {
+      const id = location.hash.slice(1);
+      activate(panels.some(p => p.id === id) ? id : buttons[0].dataset.target);
+    }
+    buttons.forEach(b => b.addEventListener('click', () => {
+      history.replaceState(null, '', '#' + b.dataset.target);
+      activate(b.dataset.target);
+    }));
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  </script>
+</body>
+</html>
