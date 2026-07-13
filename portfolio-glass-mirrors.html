@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Winstar Glass &amp; Hardware – Glass &amp; Mirrors</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=19">
   <style>
-    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s ease,transform 0.6s ease; }
-    .reveal.visible { opacity:1; transform:translateY(0); }
     .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--blue); font-size:14px; font-weight:600; letter-spacing:0.06em; text-decoration:none; margin-bottom:32px; transition:color 0.2s; }
     .back-link:hover { color:var(--navy); }
     .back-link::before { content:'\2190'; font-size:18px; }
@@ -27,37 +27,39 @@
     .lb-counter { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); color:rgba(255,255,255,0.6); font-size:13px; letter-spacing:0.08em; }
   </style>
 </head>
-<body>
+<body class="has-banner">
 
   <header>
     <div class="header-inner">
       <div class="header-brand">
-        <a href="index.html"><img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo"></a>
+        <a href="index.html">
+          <img src="winstar-logo.png?v=11" alt="Winstar Glass &amp; Hardware" class="header-logo">
+        </a>
       </div>
+      <nav class="global-nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </label>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="global-nav">
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </label>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
-      </ul>
-    </nav>
   </header>
 
   <div class="page-content">
     <div class="page-banner">
-      <div class="page-banner-bg" style="background-image: url('glass.jpg');"></div>
+      <div class="page-banner-bg" data-parallax="0.2" style="background-image: url('glass.jpg');"></div>
       <div class="page-banner-overlay"></div>
       <div class="page-banner-content">
         <h1>Glass &amp; Mirrors</h1>
-        <p>Custom glass and mirror work for homes and businesses</p>
+        <p>Custom glasswork and mirror installations</p>
       </div>
     </div>
 
@@ -154,5 +156,6 @@
       if (e.key === 'ArrowRight') show((cur + 1) % thumbs.length);
     });
   </script>
+  <script src="main.js?v=13"></script>
 </body>
 </html>

@@ -4,148 +4,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Winstar Glass &amp; Hardware – Products</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=19">
 </head>
-<body>
+<body class="has-banner">
 
   <!-- ===== HEADER ===== -->
   <header>
     <div class="header-inner">
       <div class="header-brand">
         <a href="index.html">
-          <img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo">
+          <img src="winstar-logo.png?v=11" alt="Winstar Glass &amp; Hardware" class="header-logo">
         </a>
       </div>
+      <nav class="global-nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </label>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="global-nav">
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </label>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html" class="active">Products</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
-      </ul>
-    </nav>
   </header>
 
   <div class="page-content">
 
     <!-- ===== PAGE BANNER ===== -->
     <div class="page-banner">
-      <div class="page-banner-bg" style="background-image: url('homebackground.jpg');"></div>
+      <div class="page-banner-bg" data-parallax="0.2" style="background-image: url('homebackground.jpg');"></div>
       <div class="page-banner-overlay"></div>
       <div class="page-banner-content">
         <h1>Our Products</h1>
-        <p>Premium quality products and hardware solutions</p>
+        <p>Premium quality products &amp; hardware solutions</p>
       </div>
     </div>
 
     <!-- ===== PRODUCTS GRID ===== -->
     <section class="section">
       <div class="section-inner">
-        <h2 class="section-title reveal">Product Categories</h2>
-        <div class="divider reveal"></div>
-        <p class="section-sub reveal">
-          Explore the products we offer. Select a category to learn about the different types available.
-        </p>
+        <p class="sec-intro" data-reveal>Everything below is stocked or fabricated in-house at our Flushing shop. Select a category to explore the types available.</p>
 
-        <div class="thumb-grid">
-
-          <!-- Glass -->
-          <a href="products-glass.html" class="thumb-card reveal" style="text-decoration:none;">
-            <div class="thumb-img-wrap">
-              <img src="glass.jpg" alt="Glass">
-              <div class="thumb-overlay"></div>
+                <div class="showcase-grid">
+          <a class="showcase-card wide tall" href="products-glass.html" data-reveal>
+            <img src="glass.jpg" alt="Glass" loading="lazy">
+            <span class="showcase-num">01</span>
+            <div class="showcase-body">
+              <h3>Glass</h3>
+              <span class="showcase-link">
+                Explore Glass
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
             </div>
-            <div class="thumb-label">Glass</div>
           </a>
-
-          <!-- Mirrors -->
-          <a href="products-mirrors.html" class="thumb-card reveal" style="text-decoration:none;">
-            <div class="thumb-img-wrap">
-              <img src="mirror.jpg" alt="Mirrors">
-              <div class="thumb-overlay"></div>
+          <a class="showcase-card narrow tall" href="products-mirrors.html" data-reveal style="--d: 0.12s;">
+            <img src="mirror.jpg" alt="Mirrors" loading="lazy">
+            <span class="showcase-num">02</span>
+            <div class="showcase-body">
+              <h3>Mirrors</h3>
+              <span class="showcase-link">
+                Explore Mirrors
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
             </div>
-            <div class="thumb-label">Mirrors</div>
           </a>
-
-          <!-- Windows -->
-          <a href="products-windows.html" class="thumb-card reveal" style="text-decoration:none;">
-            <div class="thumb-img-wrap">
-              <img src="windowproduct.png" alt="Windows">
-              <div class="thumb-overlay"></div>
+          <a class="showcase-card narrow" href="products-windows.html" data-reveal>
+            <img src="windowproduct.png" alt="Windows" loading="lazy">
+            <span class="showcase-num">03</span>
+            <div class="showcase-body">
+              <h3>Windows</h3>
+              <span class="showcase-link">
+                Explore Windows
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
             </div>
-            <div class="thumb-label">Windows</div>
           </a>
-
-          <!-- Shower Doors -->
-          <a href="products-showerdoors.html" class="thumb-card reveal" style="text-decoration:none;">
-            <div class="thumb-img-wrap">
-              <img src="showerdoor.jpg" alt="Shower Doors">
-              <div class="thumb-overlay"></div>
+          <a class="showcase-card wide" href="products-showerdoors.html" data-reveal style="--d: 0.12s;">
+            <img src="showerdoor.jpg" alt="Shower Doors" loading="lazy">
+            <span class="showcase-num">04</span>
+            <div class="showcase-body">
+              <h3>Shower Doors</h3>
+              <span class="showcase-link">
+                Explore Shower Doors
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </span>
             </div>
-            <div class="thumb-label">Shower Doors</div>
           </a>
-
         </div>
       </div>
     </section>
 
-    <!-- ===== CTA BANNER ===== -->
-    <div style="background: var(--navy); padding: 60px 32px; text-align: center;">
-      <h2 style="color: #fff; font-size: 26px; margin-bottom: 12px;">Looking for something custom?</h2>
-      <p style="color: rgba(255,255,255,0.65); font-size: 16px; max-width: 520px; margin: 0 auto 28px;">
-        Visit our Flushing showroom or reach out — we'll help you find the perfect solution.
-      </p>
-      <a href="get-quote.html" style="
-        display: inline-block;
-        padding: 13px 36px;
-        background: linear-gradient(135deg, #2874c8, #5aaae0);
-        color: #fff;
-        font-weight: 600;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: transform 0.2s;
-      ">Get a Free Consultation</a>
-    </div>
+    <!-- ===== CTA ===== -->
+    <section class="cta-band">
+      <div class="cta-inner">
+        <div data-reveal>
+          <h2>Looking for<br>something <em>custom?</em></h2>
+          <p>Visit our Flushing showroom or reach out — we'll help you find the perfect solution.</p>
+        </div>
+        <div data-reveal style="--d: 0.15s;">
+          <a href="get-quote.html" class="btn btn-primary">
+            Get a Free Consultation
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer>
-      <p>&copy; 2024 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="winstar-logo.png?v=11" alt="Winstar Glass &amp; Hardware">
+          <p>Family-owned glass shop serving the New York tristate area since 1996. Walk-ins welcome — free consultations available.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <ul>
+            <li>131-22 Avery Avenue<br>Flushing, NY 11355</li>
+            <li><a href="tel:+17185392308">(718) 539-2308</a></li>
+            <li><a href="mailto:winstarny@gmail.com">winstarny@gmail.com</a></li>
+            <li>Mon–Sat: 8:00 AM – 5:30 PM</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="get-quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Winstar Glass &amp; Windows. All rights reserved.</span>
+        <span>Flushing · Queens · NYC · Tristate</span>
+      </div>
     </footer>
   </div>
 
-  <script>
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  <script src="main.js?v=13"></script>
 </body>
 </html>

@@ -4,52 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Winstar Glass &amp; Hardware – Contact Us</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=1">
-  <link rel="stylesheet" href="styles.css?v=3">
-  <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=19">
 </head>
-<body>
+<body class="has-banner">
 
   <!-- ===== HEADER ===== -->
   <header>
     <div class="header-inner">
       <div class="header-brand">
         <a href="index.html">
-          <img src="winstar-logo.png?v=5" alt="Winstar Logo" class="header-logo">
+          <img src="winstar-logo.png?v=11" alt="Winstar Glass &amp; Hardware" class="header-logo">
         </a>
       </div>
+      <nav class="global-nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </label>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav class="global-nav">
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </label>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active">Contact Us</a></li>
-        <li><a href="get-quote.html" class="nav-cta">Get a Quote</a></li>
-      </ul>
-    </nav>
   </header>
 
   <div class="page-content">
 
     <!-- ===== PAGE BANNER ===== -->
     <div class="page-banner">
-      <div class="page-banner-bg" style="background-image: url('homebackground.jpg');"></div>
+      <div class="page-banner-bg" data-parallax="0.2" style="background-image: url('homebackground.jpg');"></div>
       <div class="page-banner-overlay"></div>
       <div class="page-banner-content">
         <h1>Contact Us</h1>
@@ -60,17 +51,12 @@
     <!-- ===== CONTACT SECTION ===== -->
     <section class="section">
       <div class="section-inner">
-        <h2 class="section-title reveal">Visit or Reach Out</h2>
-        <div class="divider reveal"></div>
-        <p class="section-sub reveal">
-          Stop by our showroom for a free consultation, or give us a call. No job is too big or too small — we're here to help.
-        </p>
+        <p class="sec-intro" data-reveal>Visit our showroom for a free consultation, or give us a call. No job is too big or too small — we're here to help.</p>
 
-        <div class="contact-layout reveal">
+                <div class="contact-layout">
 
           <!-- Contact Info -->
-          <div class="contact-info">
-            <h2>Get in Touch</h2>
+          <div class="contact-info" data-reveal="left">
 
             <div class="contact-detail">
               <div class="contact-icon">
@@ -93,7 +79,7 @@
               </div>
               <div class="contact-detail-text">
                 <strong>Phone</strong>
-                <span>(718) 539-2308</span>
+                <span><a href="tel:+17185392308">(718) 539-2308</a></span>
               </div>
             </div>
 
@@ -139,7 +125,7 @@
           </div>
 
           <!-- Google Map -->
-          <div class="map-wrap">
+          <div class="map-wrap" data-reveal="right">
             <iframe
               title="Winstar Glass &amp; Hardware Location"
               src="https://maps.google.com/maps?q=131-22+Avery+Avenue+Flushing+NY+11355&output=embed"
@@ -155,21 +141,38 @@
 
     <!-- ===== FOOTER ===== -->
     <footer>
-      <p>&copy; 2024 Winstar Glass &amp; Windows &nbsp;|&nbsp; 131-22 Avery Avenue, Flushing, NY 11355 &nbsp;|&nbsp; <a href="contact.html">Contact Us</a></p>
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="winstar-logo.png?v=11" alt="Winstar Glass &amp; Hardware">
+          <p>Family-owned glass shop serving the New York tristate area since 1996. Walk-ins welcome — free consultations available.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <ul>
+            <li>131-22 Avery Avenue<br>Flushing, NY 11355</li>
+            <li><a href="tel:+17185392308">(718) 539-2308</a></li>
+            <li><a href="mailto:winstarny@gmail.com">winstarny@gmail.com</a></li>
+            <li>Mon–Sat: 8:00 AM – 5:30 PM</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="get-quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Winstar Glass &amp; Windows. All rights reserved.</span>
+        <span>Flushing · Queens · NYC · Tristate</span>
+      </div>
     </footer>
   </div>
 
-  <script>
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.10 });
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  <script src="main.js?v=13"></script>
 </body>
 </html>
