@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 170" role="img" aria-labelledby="title desc">
+  <title id="title">Winstar</title>
+  <desc id="desc">Winstar logo with the current faceted eight-point star inside a custom geometric window frame, full WINSTAR wordmark, and Chinese characters.</desc>
+  <defs>
+    <linearGradient id="starDark" x1="-64" y1="-62" x2="64" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071a31"/>
+      <stop offset="1" stop-color="#0a3f75"/>
+    </linearGradient>
+    <linearGradient id="starMid" x1="66" y1="-62" x2="-66" y2="66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2378b7"/>
+      <stop offset="1" stop-color="#0b315c"/>
+    </linearGradient>
+    <linearGradient id="starLight" x1="-66" y1="66" x2="66" y2="-66" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e4f7ff"/>
+      <stop offset="1" stop-color="#62afd7"/>
+    </linearGradient>
+    <radialGradient id="glassCenter" cx="35%" cy="28%" r="75%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".25" stop-color="#c8ebf8"/>
+      <stop offset=".66" stop-color="#2678b8"/>
+      <stop offset="1" stop-color="#071f3c"/>
+    </radialGradient>
+  </defs>
+  <g transform="translate(42 36)">
+    <path d="M10 0h118v118l-10 10H0V10z" fill="none" stroke="#092536" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M10 0v128M0 10h128M118 0v128M0 118h128" fill="none" stroke="#092536" stroke-width="2.6" opacity=".3"/>
+    <path d="M64 7v114M7 64h114" fill="none" stroke="#94d0dc" stroke-width="3"/>
+    <path d="M15 15l98 98M113 15l-98 98" fill="none" stroke="#d7f1f6" stroke-width="2" opacity=".55"/>
+    <path d="M92 0h36v36" fill="none" stroke="#b88746" stroke-width="4" stroke-linecap="square"/>
+    <g transform="translate(64 64) scale(.52)">
+      <polygon points="0,0 -11,-21 0,-120" fill="url(#starDark)"/>
+      <polygon points="0,0 11,-21 0,-120" fill="url(#starLight)"/>
+      <polygon points="0,0 11,21 0,120" fill="url(#starMid)"/>
+      <polygon points="0,0 -11,21 0,120" fill="url(#starLight)"/>
+      <polygon points="0,0 21,-11 120,0" fill="url(#starDark)"/>
+      <polygon points="0,0 21,11 120,0" fill="url(#starMid)"/>
+      <polygon points="0,0 -21,-11 -120,0" fill="url(#starMid)"/>
+      <polygon points="0,0 -21,11 -120,0" fill="url(#starLight)"/>
+      <polygon points="0,0 7,-23 55,-55" fill="url(#starDark)"/>
+      <polygon points="0,0 23,-7 55,-55" fill="url(#starMid)"/>
+      <polygon points="0,0 23,7 55,55" fill="url(#starMid)"/>
+      <polygon points="0,0 7,23 55,55" fill="url(#starLight)"/>
+      <polygon points="0,0 -7,23 -55,55" fill="url(#starDark)"/>
+      <polygon points="0,0 -23,7 -55,55" fill="url(#starMid)"/>
+      <polygon points="0,0 -23,-7 -55,-55" fill="url(#starLight)"/>
+      <polygon points="0,0 -7,-23 -55,-55" fill="url(#starLight)"/>
+      <circle cx="0" cy="0" r="36" fill="url(#glassCenter)" stroke="#0b315c" stroke-width="3"/>
+      <circle cx="0" cy="0" r="29" fill="none" stroke="#ffffff" stroke-width="4.1" opacity=".78"/>
+      <path d="M-20 -6c2.5 13.5 8.4 19.5 13.8 19.5 3.2 0 4.1-8.8 6-17.4 1.9 8.6 3 17.4 6.2 17.4 4.9 0 11.3-6.7 13.8-19.5" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g transform="translate(205 36)">
+    <text x="0" y="59" font-family="Avenir Next, Helvetica Neue, Arial, sans-serif" font-size="62" font-weight="760" letter-spacing="5.4" fill="#092536">WINSTAR</text>
+    <path d="M2 79h344" stroke="#b88746" stroke-width="2.5"/>
+    <text x="193" y="116" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, Noto Sans CJK SC, sans-serif" font-size="25" font-weight="600" letter-spacing="12" text-anchor="middle" fill="#2d7183">华信</text>
+  </g>
+</svg>
